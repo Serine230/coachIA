@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>diagram.puml</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #080808;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+diagram.puml</font>
+</center></td></tr></table>
+<pre><span class="s0">@startuml 
+class User { 
+  - int id 
+  - String email 
+  - String passwordHash 
+  - String name 
+} 
+ 
+class Task { 
+  - int id 
+  - String title 
+  - String status 
+  - Date deadline 
+  - int userId 
+} 
+ 
+class Category { 
+  - int id 
+  - String name 
+} 
+ 
+class ProductivityLog { 
+  - int id 
+  - int taskId 
+  - int timeSpent 
+  - Date timestamp 
+} 
+ 
+User &quot;1&quot; --&gt; &quot;many&quot; Task 
+Task &quot;many&quot; --&gt; &quot;1&quot; Category 
+Task &quot;1&quot; --&gt; &quot;many&quot; ProductivityLog 
+@enduml</span></pre>
+</body>
+</html>

@@ -1,0 +1,32 @@
+@startuml
+class User {
+  - int id
+  - String email
+  - String passwordHash
+  - String name
+}
+
+class Task {
+  - int id
+  - String title
+  - String status
+  - Date deadline
+  - int userId
+}
+
+class Category {
+  - int id
+  - String name
+}
+
+class ProductivityLog {
+  - int id
+  - int taskId
+  - int timeSpent
+  - Date timestamp
+}
+
+User "1" --> "many" Task
+Task "many" --> "1" Category
+Task "1" --> "many" ProductivityLog
+@enduml
