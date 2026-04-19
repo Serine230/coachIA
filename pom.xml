@@ -1,27 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>coachIA</artifactId>
+=======
+>>>>>>> c1af604d0426df42c42fa7eedf4c449c304864a9
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
          http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
+<<<<<<< HEAD
     <groupId>org.example</groupId>
     <artifactId>coachIA</artifactId>
+=======
+    <groupId>com.coachproductivite</groupId>
+    <artifactId>coach-productivite-ia</artifactId>
+>>>>>>> 66242ca8924cebc70a577ea8b435901ab06e6a16
+>>>>>>> c1af604d0426df42c42fa7eedf4c449c304864a9
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <properties>
+<<<<<<< HEAD
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+=======
+<<<<<<< HEAD
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>26</maven.compiler.source>
+        <maven.compiler.target>26</maven.compiler.target>
+=======
+>>>>>>> c1af604d0426df42c42fa7eedf4c449c304864a9
         <maven.compiler.source>25</maven.compiler.source>
         <maven.compiler.target>25</maven.compiler.target>
         <javafx.version>21.0.2</javafx.version>
+<<<<<<< HEAD
     </properties>
 
     <dependencies>
+=======
+>>>>>>> 66242ca8924cebc70a577ea8b435901ab06e6a16
+    </properties>
+
+    <dependencies>
+
+<<<<<<< HEAD
+        <!-- MySQL JDBC Driver -->
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <version>8.3.0</version>
+        </dependency>
+
+=======
+>>>>>>> 66242ca8924cebc70a577ea8b435901ab06e6a16
+>>>>>>> c1af604d0426df42c42fa7eedf4c449c304864a9
         <!-- JavaFX -->
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+            <version>21</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-fxml</artifactId>
+            <version>21</version>
+=======
+>>>>>>> c1af604d0426df42c42fa7eedf4c449c304864a9
             <version>${javafx.version}</version>
         </dependency>
         <dependency>
@@ -39,6 +93,10 @@
             <groupId>com.mysql</groupId>
             <artifactId>mysql-connector-j</artifactId>
             <version>8.3.0</version>
+<<<<<<< HEAD
+=======
+>>>>>>> 66242ca8924cebc70a577ea8b435901ab06e6a16
+>>>>>>> c1af604d0426df42c42fa7eedf4c449c304864a9
         </dependency>
         <!-- OkHttp pour API Gemini -->
         <dependency>
@@ -46,7 +104,22 @@
             <artifactId>okhttp</artifactId>
             <version>4.12.0</version>
         </dependency>
+<<<<<<< HEAD
         <!-- Gson -->
+=======
+
+<<<<<<< HEAD
+        <!-- JSON parser -->
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20240303</version>
+        </dependency>
+
+    </dependencies>
+=======
+        <!-- Gson pour parser JSON -->
+>>>>>>> c1af604d0426df42c42fa7eedf4c449c304864a9
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
@@ -82,4 +155,8 @@
         </plugins>
     </build>
 
+<<<<<<< HEAD
+=======
+>>>>>>> 66242ca8924cebc70a577ea8b435901ab06e6a16
+>>>>>>> c1af604d0426df42c42fa7eedf4c449c304864a9
 </project>
