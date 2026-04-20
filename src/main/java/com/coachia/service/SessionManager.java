@@ -1,4 +1,4 @@
-package com.coachia.utils;
+package com.coachia.service;
 
 import com.coachia.model.User;
 
