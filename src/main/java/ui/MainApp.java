@@ -18,6 +18,8 @@ public class MainApp extends Application {
         // On démarre sur l'écran Login
         SceneManager.switchTo("login");
 
+
+
         primaryStage.show();
     }
 

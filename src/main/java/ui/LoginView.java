@@ -7,12 +7,18 @@ import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.*;
+import model.User;
+import service.AuthService;
 
 public class LoginView {
 
     private Scene scene;
+    private static User utilisateurConnecte;
 
     public LoginView() {
+
+        AuthService authService = new AuthService();
+
         // ===== TITRE =====
         Label titre = new Label("🧠 Coach Productivité IA");
         titre.setFont(Font.font("Arial", FontWeight.BOLD, 26));
@@ -33,9 +39,8 @@ public class LoginView {
         passwordField.setMaxWidth(300);
         passwordField.setStyle("-fx-padding: 10; -fx-font-size: 14;");
 
-        // ===== MESSAGE ERREUR =====
+        // ===== MESSAGE =====
         Label erreurLabel = new Label("");
-        erreurLabel.setTextFill(Color.RED);
         erreurLabel.setFont(Font.font("Arial", 12));
 
         // ===== BOUTON LOGIN =====
@@ -56,22 +61,32 @@ public class LoginView {
             String password = passwordField.getText().trim();
 
             if (email.isEmpty() || password.isEmpty()) {
+                erreurLabel.setTextFill(Color.RED);
                 erreurLabel.setText("⚠️ Veuillez remplir tous les champs.");
-            } else {
-                // TODO Jour 2 : relier à AuthService
+                return;
+            }
+
+            if (!authService.isEmailValide(email)) {
+                erreurLabel.setTextFill(Color.RED);
+                erreurLabel.setText("⚠️ Email invalide.");
+                return;
+            }
+
+            User user = authService.connecter(email, password);
+            if (user != null) {
+                utilisateurConnecte = user;
                 erreurLabel.setTextFill(Color.GREEN);
-                erreurLabel.setText("✅ Connexion en cours...");
+                erreurLabel.setText("✅ Connexion réussie !");
                 SceneManager.switchTo("main");
+            } else {
+                erreurLabel.setTextFill(Color.RED);
+                erreurLabel.setText("❌ Email ou mot de passe incorrect.");
             }
         });
 
         // ===== LIEN INSCRIPTION =====
         Hyperlink inscriptionLink = new Hyperlink("Pas encore de compte ? S'inscrire");
-        inscriptionLink.setOnAction(e -> {
-            // TODO Jour 2 : afficher écran inscription
-            erreurLabel.setTextFill(Color.BLUE);
-            erreurLabel.setText("Inscription — à implémenter Jour 2");
-        });
+        inscriptionLink.setOnAction(e -> SceneManager.switchTo("inscription"));
 
         // ===== LAYOUT =====
         VBox layout = new VBox(15);
@@ -89,8 +104,11 @@ public class LoginView {
         );
 
         layout.setStyle("-fx-background-color: #F9F9F9;");
-
         this.scene = new Scene(layout, 900, 600);
+    }
+
+    public static User getUtilisateurConnecte() {
+        return utilisateurConnecte;
     }
 
     public Scene getScene() {
