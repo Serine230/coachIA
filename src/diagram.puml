@@ -4,6 +4,7 @@ class User {
   - String email
   - String passwordHash
   - String name
+  - List preference
 }
 
 class Task {
@@ -26,7 +27,7 @@ class ProductivityLog {
   - Date timestamp
 }
 
-User "1" --> "many" Task
-Task "many" --> "1" Category
-Task "1" --> "many" ProductivityLog
+User "1" -- "*" Task
+Task "*" -- "1" Category
+Task "1" -- "*" ProductivityLog
 @enduml
